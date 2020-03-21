@@ -6,7 +6,8 @@
 此專案為職訓局練習用為目的，絕無商業營利行為<br>
 如有侵權請與我聯繫，非常感謝！<br>
 <br>
-請直接將petweb-online資料庫匯入即可<br>
+請直接將petweb-online資料庫匯入<br>
+記得要去connMysql.php改參數!!<br>
 <br>
 管理員<br>
 帳號: admin<br>
