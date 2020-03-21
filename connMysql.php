@@ -2,8 +2,8 @@
 //資料庫主機設定
 $db_host = "localhost"; //主機位置->可換成IP
 $db_username = "root";  //資料庫帳號
-$db_password = "1234";  //資料庫密碼
-$db_name = "petweb"; //連接的資料庫名稱
+$db_password = "";  //資料庫密碼
+$db_name = "phpmember"; //連接的資料庫名稱
 //連線資料庫 
 $db_link = @new mysqli($db_host, $db_username, $db_password, $db_name);
 //錯誤處理
