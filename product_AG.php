@@ -27,7 +27,7 @@ memberData(); //登入會員資料及判斷選單
 </div>
 
 <script>
-    var requestURL = "json/AG_Product.json";
+    var requestURL = "http://localhost/json/AG_Product.json";
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';

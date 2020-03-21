@@ -1,4 +1,3 @@
-
 function checkForm() {
     if (document.formJoin.m_passwd.value != "" || document.formJoin.m_passwdrecheck.value != "") {
         if (!check_passwd(document.formJoin.m_passwd.value, document.formJoin.m_passwdrecheck.value)) {

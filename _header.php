@@ -3,12 +3,7 @@
         <div class="left"><a href="index.php"><img src="images/logo1.jpg"></a></div>
         <div class="right">
             <ul class="rightheader">
-                <li class="step1">
-                    <a class="step1 media-m-pdd media-l-pdd media-xl-pdd" href="guide.php">
-                    <img src="../images/description.png">
-                    購物說明
-                    </a>
-                </li>
+                <li class="step1"><a class="step1 media-m-pdd media-l-pdd media-xl-pdd" href="guide.php"><img src="../images/description.png">購物說明</a></li>
             </ul>
             <?php if (isset($_SESSION["loginMember"]) && ($_SESSION["memberLevel"] != "")) { ?>
                 <ul class="rightheader">

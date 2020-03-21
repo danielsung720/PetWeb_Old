@@ -9,25 +9,16 @@ memberData(); //登入會員資料及判斷選單
 <HEAD>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <TITLE>培茲PETS-貓咪專區</TITLE>
+    <TITLE>培茲PETS-狗狗專區</TITLE>
     <link rel=stylesheet type="text/css" href="css/rwd.css">
     <link rel=stylesheet type="text/css" href="css/common.css">
     <link rel=stylesheet type="text/css" href="css/product.css">
+
 </HEAD>
 <?php include("_header.php"); ?>
 
-<div class="nav2 media-m-hid media-l-center">
-    <div class="location media-xl-10">
-        <ul class="breadcrumb">
-            <li><span>目前位置</span></li>
-            <li><span><a href="index.php">首頁</a></span></li>
-            <li><span>貓咪商品-服飾專區</span></li>
-        </ul>
-    </div>
-</div>
-
 <script>
-    var requestURL = "http://localhost/json/BF_Product.json";
+    var requestURL = "http://localhost/json/AA_Product.json";
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
@@ -40,7 +31,7 @@ memberData(); //登入會員資料及判斷選單
 
     function showProduct(jsonObj) {
 
-        const man = jsonObj["BF"];
+        const man = jsonObj["AA"];
 
         for (i = 0; i < man.length; i++) {
             const myArticle = document.createElement('article');
@@ -56,23 +47,23 @@ memberData(); //登入會員資料及判斷選單
             const btn = document.createElement("BUTTON");
             myH2.textContent = man[i].ProdName;
             myPara1.src = man[i].Img;
-            myPara2.textContent = '商品:' + man[i].ProdName;
-            myPara3.textContent = '規格:' + man[i].Model;
-            myPara4.textContent = '價格:' + man[i].PriceOrigin;
-            myPara5.textContent = '內容:' + man[i].ProdDisc;
-            myPara6.textContent = '類別:' + man[i].CategoryID;
+            myPara2.textContent = '商品名稱：:' + man[i].ProdName;
+            myPara3.textContent = '商品規格:' + man[i].Model;
+            myPara4.textContent = '商品價格:' + man[i].PriceOrigin;
+            myPara5.textContent = '商品內容:' + man[i].ProdDisc;
+            myPara6.textContent = '商品類別:' + man[i].CategoryID;
             btn.innerHTML = "加入購物車";
             myArticle.appendChild(myH2).style.color = 'brown';
             myArticle.appendChild(myH2).style.fontFamily = "微軟正黑體";
             myArticle.appendChild(myPara1);
-            mytext.appendChild(myPara2).style.color = '#AF5F3C';
-            mytext.appendChild(myPara3).style.color = '#B17844';
-            mytext.appendChild(myPara4).style.color = '#CB1B45';
-            mytext.appendChild(myPara5).style.color = '#E79460';
-            mytext.appendChild(myPara6).style.color = '#B4A582';
+            mytext.appendChild(myPara2).style.color = 'drakgrey';
+            mytext.appendChild(myPara3).style.color = 'darkgrey';
+            mytext.appendChild(myPara4).style.color = 'orange';
+            mytext.appendChild(myPara5).style.color = 'orange';
+            mytext.appendChild(myPara6).style.color = 'orange';
             myArticle.appendChild(mytext);
             myArticle.appendChild(myList);
-            myArticle.appendChild(btn);
+            myArticle.appendChild(btn).style.backgroundcolor = 'transparent';
             content.appendChild(myArticle);
         }
 
@@ -81,9 +72,9 @@ memberData(); //登入會員資料及判斷選單
 </script>
 
 
-<!-- <div class="title">
+<div class="title">
     <h1>狗狗-乾糧專區</h1>
-</div> -->
+</div>
 
 
 <section class="content">

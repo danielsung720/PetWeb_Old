@@ -3,7 +3,7 @@
 $db_host = "localhost"; //主機位置->可換成IP
 $db_username = "root";  //資料庫帳號
 $db_password = "1234";  //資料庫密碼
-$db_name = "phpmember"; //連接的資料庫名稱
+$db_name = "petweb"; //連接的資料庫名稱
 //連線資料庫 
 $db_link = @new mysqli($db_host, $db_username, $db_password, $db_name);
 //錯誤處理
@@ -140,7 +140,7 @@ function admDeletepetdata() //刪除寵物資料
 			unlink("photos/" . $row_delPhoto["pp_picurl"]);
 		} //12.4紹寧新增:刪除資料同時刪除資料夾中的檔案
 
-		$query_delMember = "DELETE petdata,petphoto FROM petdata LEFT JOIN petphoto ON petdata.p_id = petphoto.p_id WHERE petdata.p_id=? ";
+		$query_delMember = "DELETE pd,pp,pa FROM petdata pd,petphoto pp,paired pa WHERE pd.p_id=pp.p_id AND pd.p_id=pa.p_id AND pd.p_id = ? ";
 		$stmt = $db_link->prepare($query_delMember);
 		$stmt->bind_param("i", $_GET["id"]);
 		$stmt->execute();
@@ -262,7 +262,7 @@ function deletePetdata() //會員刪除寵物資料
 			unlink("photos/" . $row_delPhoto["pp_picurl"]);
 		} //12.4紹寧新增:刪除資料同時刪除資料夾中的檔案
 
-		$query_delMember = "DELETE petdata,petphoto FROM petdata LEFT JOIN petphoto ON petdata.p_id = petphoto.p_id WHERE petdata.p_id=? ";
+		$query_delMember = "DELETE pd,pp,pa FROM petdata pd,petphoto pp,paired pa WHERE pd.p_id=pp.p_id AND pd.p_id=pa.p_id AND pd.p_id =? ";
 		$stmt = $db_link->prepare($query_delMember);
 		$stmt->bind_param("i", $_GET["id"]);
 		$stmt->execute();
